@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+
+@keyframes blinkGreen {
+    0%,100% { background-color: white; }
+    50% { background-color: #dcfce7; }
+  }
+
+  .blink-green {
+    animation: blinkGreen 1.6s infinite;
+  }
