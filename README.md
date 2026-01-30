@@ -1,59 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# VIP Room Monitoring System  
+**PT Kereta Api Indonesia (Persero)**  
+Stasiun Solo Balapan – Ruang VIP Joglo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📌 Deskripsi
+VIP Room Monitoring System adalah aplikasi berbasis web yang digunakan untuk **mengelola, memantau, dan menampilkan jadwal penggunaan Ruang VIP Joglo Solo Balapan**.  
+Sistem ini mendukung kebutuhan **administrasi internal** serta **monitoring real-time melalui display TV**.
 
-## About Laravel
+Aplikasi dikembangkan untuk meningkatkan keteraturan jadwal, transparansi penggunaan ruang, serta kemudahan pemantauan bagi petugas dan manajemen.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 Tujuan Sistem
+- Mengelola jadwal penggunaan Ruang VIP secara terpusat
+- Menampilkan informasi penggunaan ruang secara real-time
+- Meminimalisir bentrok jadwal dan kesalahan pencatatan
+- Mendukung kebutuhan laporan dan evaluasi penggunaan ruang
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🧩 Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 🔐 Admin Dashboard
+- Login Admin
+- CRUD Jadwal Penggunaan Ruang VIP
+- Pengaturan status jadwal (Terjadwal / Dibatalkan)
+- Riwayat penggunaan Ruang VIP
+- Filter dan pengelolaan data
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📺 Web Monitoring (Display TV)
+- Tampilan khusus untuk layar TV
+- Auto refresh (real-time monitoring)
+- Menampilkan seluruh jadwal penggunaan Ruang VIP
+- Penanda status:
+  - 🟢 Terjadwal
+  - 🔴 Dibatalkan
+- Jam & tanggal otomatis
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Teknologi yang Digunakan
+- **Framework**: Laravel 12
+- **Bahasa**: PHP 8.4
+- **Frontend**: Blade Template + Tailwind CSS
+- **Database**: MySQL
+- **Version Control**: Git & GitHub
+- **Environment**: Localhost (XAMPP / Laravel Built-in Server)
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🗂️ Struktur Modul
+- `Admin`  
+  Pengelolaan jadwal dan data Ruang VIP
+- `Public / TV Monitoring`  
+  Menampilkan data jadwal untuk kebutuhan display
+- `Database`  
+  Penyimpanan jadwal, status, media, tamu, dan keterangan
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
