@@ -30,13 +30,14 @@
                     <label class="block text-sm font-semibold mb-1">Bulan</label>
                     <select name="bulan" class="border rounded-lg px-3 py-2 min-w-[160px]">
                         <option value="">Semua</option>
-                        @foreach(range(1,12) as $b)
+                        @foreach($bulanList as $b)
                             <option value="{{ $b }}"
                                 {{ request('bulan') == $b ? 'selected' : '' }}>
                                 {{ \Carbon\Carbon::create()->month($b)->translatedFormat('F') }}
                             </option>
                         @endforeach
                     </select>
+
                 </div>
 
                 <!-- TAHUN -->
@@ -44,13 +45,14 @@
                     <label class="block text-sm font-semibold mb-1">Tahun</label>
                     <select name="tahun" class="border rounded-lg px-3 py-2 min-w-[120px]">
                         <option value="">Semua</option>
-                        @for ($y = now()->year; $y >= now()->year - 5; $y--)
+                        @foreach($tahunList as $y)
                             <option value="{{ $y }}"
                                 {{ request('tahun') == $y ? 'selected' : '' }}>
                                 {{ $y }}
                             </option>
-                        @endfor
+                        @endforeach
                     </select>
+
                 </div>
 
                 <!-- BUTTON -->

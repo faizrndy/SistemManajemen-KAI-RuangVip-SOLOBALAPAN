@@ -14,8 +14,8 @@ class RiwayatVipController extends Controller
      */
     private function getRiwayatFiltered()
     {
-        $bulan = request('bulan'); // 1 - 12
-        $tahun = request('tahun'); // 2026
+        $bulan = request('bulan');
+        $tahun = request('tahun');
 
         $query = JadwalVip::query();
 
@@ -37,13 +37,35 @@ class RiwayatVipController extends Controller
     }
 
     /**
+     * LIST BULAN & TAHUN (UNTUK FILTER)
+     */
+    private function getFilterOptions()
+    {
+        $tahunList = JadwalVip::selectRaw('YEAR(tanggal) as tahun')
+            ->distinct()
+            ->orderByDesc('tahun')
+            ->pluck('tahun');
+
+        $bulanList = JadwalVip::selectRaw('MONTH(tanggal) as bulan')
+            ->distinct()
+            ->orderBy('bulan')
+            ->pluck('bulan');
+
+        return compact('bulanList', 'tahunList');
+    }
+
+    /**
      * HALAMAN RIWAYAT (WEB)
      */
     public function index()
     {
         $riwayat = $this->getRiwayatFiltered();
+        $filters = $this->getFilterOptions();
 
-        return view('admin.riwayat.index', compact('riwayat'));
+        return view('admin.riwayat.index', array_merge(
+            compact('riwayat'),
+            $filters
+        ));
     }
 
     /**
