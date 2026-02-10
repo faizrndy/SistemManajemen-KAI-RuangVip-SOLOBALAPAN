@@ -5,17 +5,21 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\JadwalVip;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class JadwalVipController extends Controller
 {
-    public function index()
-    {
-        $jadwal = JadwalVip::orderBy('tanggal')
-            ->orderBy('mulai')
-            ->get();
+  public function index()
+  {
+      $today = Carbon::today();
 
-        return view('admin.jadwal.index', compact('jadwal'));
-    }
+      $jadwal = JadwalVip::whereDate('tanggal', '>=', $today)
+          ->orderBy('tanggal')
+          ->orderBy('mulai')
+          ->get();
+
+      return view('admin.jadwal.index', compact('jadwal'));
+  }
 
     public function create()
     {
